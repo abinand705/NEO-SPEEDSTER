@@ -1,0 +1,6 @@
+{
+  "name": "Automotive Speedometer Speed Test",
+  "description": "A futuristic automotive cockpit telemetry speed test dashboard in a premium crimson and deep-black aesthetic, featuring real-time sequential LED tachometers, gear shift simulation, and precise packet roundtrip gauges.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
