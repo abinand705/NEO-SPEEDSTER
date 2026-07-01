@@ -685,8 +685,16 @@ export default function App() {
               {/* Dynamic central shift gear block */}
               <div className="flex items-center gap-3">
                 <span className="text-[10px] font-mono font-bold text-zinc-500">GEAR</span>
-                <div className="relative flex items-center justify-center bg-black/60 p-1.5 md:p-2 rounded-lg border border-zinc-900 min-w-[48px] h-10 select-none">
-                  <span className="text-xl font-mono font-black text-red-500 drop-shadow-[0_0_6px_rgba(239,68,68,0.8)] animate-bounce-subtle">
+                <div className={`relative flex items-center justify-center p-1.5 md:p-2 rounded-lg border min-w-[48px] h-10 select-none transition-all duration-100 ${
+                  getDrivingTelemetry().rpm >= 7000
+                    ? 'animate-gear-container-flash'
+                    : 'bg-black/60 border-zinc-900'
+                }`}>
+                  <span className={`text-xl font-mono font-black text-red-500 drop-shadow-[0_0_6px_rgba(239,68,68,0.8)] ${
+                    getDrivingTelemetry().rpm >= 7000
+                      ? 'animate-gear-text-flash'
+                      : 'animate-bounce-subtle'
+                  }`}>
                     {getDrivingTelemetry().gear}
                   </span>
                 </div>

@@ -1,1 +1,33 @@
 @import "tailwindcss";
+
+@keyframes gear-container-flash {
+  0%, 100% {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-color: #18181b; /* zinc-900 */
+    box-shadow: none;
+  }
+  50% {
+    background-color: rgba(220, 38, 38, 0.35); /* semi-transparent race red */
+    border-color: #ef4444;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+  }
+}
+
+@keyframes gear-text-flash {
+  0%, 100% {
+    color: #ef4444; /* red-500 */
+    filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.8));
+  }
+  50% {
+    color: #ffffff; /* bright white shift-flash */
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1));
+  }
+}
+
+.animate-gear-container-flash {
+  animation: gear-container-flash 0.25s infinite;
+}
+
+.animate-gear-text-flash {
+  animation: gear-text-flash 0.25s infinite;
+}
